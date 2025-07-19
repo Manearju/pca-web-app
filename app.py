@@ -4,6 +4,9 @@ import pandas as pd
 app = Flask(__name__)
 
 # PCA Coefficients (based on your model)
+import os
+
+
 def calculate_scores(df):
     # Ensure required columns exist
     columns_needed = ['Mat', 'Inn', 'NO', 'Runs', 'HS', 'Avg', 'Hundreds', 'Fifties', 'Duck']
@@ -42,4 +45,5 @@ def index():
     return render_template('index.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
