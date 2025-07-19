@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ranking Results</title>
+    <style>
+        .table {
+            width: 90%;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        .table th, .table td {
+            border: 1px solid #333;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Player Rankings (Lower PWA = Better)</h2>
+    {{ tables | safe }}
+    <a href="/">← Upload another file</a>
+</body>
+</html>
